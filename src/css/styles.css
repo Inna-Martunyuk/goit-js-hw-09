@@ -37,7 +37,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+/*================GALLERY===============*/
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -56,15 +56,16 @@ img {
   width: 360px;
   height: 200px;
 }
+/*================GALLERY===============*/
+/*================FORM===============*/
 .feedback-form {
   padding: 24px;
+}
+.label-form {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  gap: 8px;
-}
-.label-form {
   margin-bottom: 8px;
   font-weight: 400;
   font-size: 16px;
@@ -83,6 +84,7 @@ img {
   border-radius: 4px;
   width: 360px;
   height: 40px;
+  margin-bottom: 16px;
 }
 .btn-form {
   border-radius: 8px;
@@ -96,4 +98,10 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
 }
+/*================FORM===============*/
