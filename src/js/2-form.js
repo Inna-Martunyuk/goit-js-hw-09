@@ -17,14 +17,14 @@ const fillFormFields = () => {
       }
     }
   } catch (err) {
-    console.log(err);
+    console.error('Error parsing form data from localStorage:', err);
   }
 };
 fillFormFields();
 
 const onFormFieldInput = event => {
   const { target: formFieldEl } = event;
-  const fieldValue = formFieldEl.value;
+  const fieldValue = formFieldEl.value.trim();
   const fieldName = formFieldEl.name;
   formData[fieldName] = fieldValue;
   localStorage.setItem('feedback-form-data', JSON.stringify(formData));
@@ -32,8 +32,13 @@ const onFormFieldInput = event => {
 
 const onFeedbackFormSubmit = event => {
   event.preventDefault();
-  const { currentTarget: formEl } = event;
-  formEl.reset();
+
+  if (!formData.email || !formData.message) {
+    alert('Fill please all fields');
+    return;
+  }
+  console.log('Form data submitted:', formData);
+  feedbackFormEl.reset();
   localStorage.removeItem('feedback-form-data');
   formData = { email: '', message: '' };
 };
